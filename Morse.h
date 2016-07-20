@@ -8,7 +8,10 @@
 using namespace std;
 
 struct Morse{
-	Morse(){}
+	Morse(){
+		code = "";
+		id = 0;
+	}
 
 	Morse(const string& seq) {
 		code = seq;
