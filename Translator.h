@@ -24,6 +24,7 @@ public:
 	void buildTree() {
 		string line;
 		string letter;
+		string code = "";
 		string::iterator itr;
 
 		BTNode<string>* current = decode.getRoot();
@@ -35,6 +36,7 @@ public:
 			letter = *(itr++); // get letter
 			// iterate through morse code
 			for (itr; itr != line.end(); itr++) {
+				code += *itr;
 				if (*itr == '.') { // go left if '.'
 					if (current->left == NULL) {
 						BTNode<string>* tmp = new BTNode<string>("");
@@ -51,6 +53,7 @@ public:
 				}
 			}
 			current->data = letter; // assign node stopped at to current letter
+			encode[letter] = code; // put letter, morse pair into map for encoding
 		}
 
 		outputTree(decode.getRoot()); // output for debug, remove later
@@ -70,7 +73,7 @@ public:
 
 private:
 	ifstream fin; // file to construct tree with
-	KW::Map<char, Morse> encode;	
+	KW::Map<string, string> encode;	
 	Binary_Tree<string> decode;
 
 };
