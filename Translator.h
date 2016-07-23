@@ -7,6 +7,7 @@
 #include "map.h"
 #include "Binary_Search_Tree.h"
 #include "Binary_Tree.h"
+#include <map>
 
 using namespace std;
 
@@ -73,7 +74,7 @@ public:
 
 private:
 	ifstream fin; // file to construct tree with
-	KW::Map<string, string> encode;	
+	map<string, string> encode;	
 	Binary_Tree<string> decode;
 
 };

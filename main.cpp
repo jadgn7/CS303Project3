@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-	
+
 	Translator t("morse.txt");
 	t.buildTree();
 	
