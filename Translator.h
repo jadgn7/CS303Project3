@@ -83,8 +83,14 @@ public:
 			currentLetter = *itr;
 			if (isupper(currentLetter)) { currentLetter = tolower(currentLetter); }//get rid of capitals
 			currentLetterS = currentLetter;
+			if (currentLetterS==" "){
+				result+=" ";
+				cout<<"space"<<endl;
+			}
+			else{
 			cout<<currentLetterS<<" "<<encode[currentLetterS]<<endl; //test
 			result+= (encode[currentLetterS]+" ");
+			}
 			itr++;
 		}
 		cout<<result;//test
