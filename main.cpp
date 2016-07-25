@@ -9,6 +9,7 @@ int main() {
 
 	Translator t("morse.txt");
 	t.buildTree();
+	t.encodeLine("Hello");
 	
 	cin.get();
 	return 0;
