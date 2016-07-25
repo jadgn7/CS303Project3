@@ -81,7 +81,7 @@ public:
 		//get current letter and add to result
 		while(itr != line.end()){
 			currentLetter = *itr;
-			if (isupper(currentLetter)) { tolower(currentLetter); }//get rid of capitals
+			if (isupper(currentLetter)) { currentLetter = tolower(currentLetter); }//get rid of capitals
 			currentLetterS = currentLetter;
 			cout<<currentLetterS<<" "<<encode[currentLetterS]<<endl; //test
 			result+= (encode[currentLetterS]+" ");
