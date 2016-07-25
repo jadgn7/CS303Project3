@@ -55,9 +55,10 @@ public:
 			}
 			current->data = letter; // assign node stopped at to current letter
 			encode[letter] = code; // put letter, morse pair into map for encoding
+			code = "";
 		}
 
-		outputTree(decode.getRoot()); // output for debug, remove later
+		//outputTree(decode.getRoot()); // output for debug, remove later
 	}
 
 	// outputs tree via infix
@@ -70,6 +71,26 @@ public:
 		cout << " " << n->data << endl;
 		outputTree(n->right);
 	}
+
+	//encodes a string
+	string encodeLine(string line){
+		string::iterator itr = line.begin();
+		string result;
+		char currentLetter;
+		string currentLetterS;
+		//get current letter and add to result
+		while(itr != line.end()){
+			currentLetter = *itr;
+			if (isupper(currentLetter)) { tolower(currentLetter); }//get rid of capitals
+			currentLetterS = currentLetter;
+			cout<<currentLetterS<<" "<<encode[currentLetterS]<<endl; //test
+			result+= (encode[currentLetterS]+" ");
+			itr++;
+		}
+		cout<<result;//test
+		return result;
+	}
+
 
 
 private:
